@@ -1,0 +1,16 @@
+
+<h2>Hotel Rooms</h2>
+
+<div class="rooms">
+  @for (room of rooms(); track room.id) {
+    <div class="room">
+      <img [src]="room.thumbnail" [alt]="room.roomType">
+
+      <h3>{{ room.roomType }}</h3>
+      <p>Room Number: {{ room.roomNumber }}</p>
+      <p>Price: {{ room.pricePerNight }} GEL</p>
+      <p>Beds: {{ room.bedCount }}</p>
+      <p>Capacty: {{ room.capacity }}</p>
+    </div>
+  }
+</div>

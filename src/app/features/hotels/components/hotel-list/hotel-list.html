@@ -1,0 +1,19 @@
+
+<h1>Hotels</h1>
+
+<div class="hotels">
+  @for (hotel of hotels(); track hotel.id) {
+    <div class="hotel" (click)="selectHotel(hotel.id)">
+      <img [src]="hotel.thumbnail" [alt]="hotel.name">
+
+      <h2>{{ hotel.name }}</h2>
+      <p>City: {{ hotel.address.city }}</p>
+      <p>Stars: {{ hotel.starRating }}</p>
+      <p>Rooms: {{ hotel.roomCount }}</p>
+    </div>
+  }
+</div>
+
+@if (selectedHotel() !== null) {
+  <app-hotel-rooms [hotelId]="selectedHotel()!"></app-hotel-rooms>
+}
